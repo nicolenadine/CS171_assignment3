@@ -1,7 +1,8 @@
 # CS171_assignment3
 Code files related to Assignment 3
 
-
+### data_exploration.ipynb
+Explore data features. Fill in missing data. Check for duplicate samples. Save to new cleaned csv
 
 ### config.py: 
 Handles command line argument parsing, output directory setup, and file path generation.
