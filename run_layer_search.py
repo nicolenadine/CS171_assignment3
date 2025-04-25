@@ -8,7 +8,7 @@ import tensorflow as tf
 import pandas as pd
 import os
 
-# Import from your existing modules
+# Import from existing modules
 from config import setup_output_directory, print_configuration, get_file_paths
 from data_processing import prepare_data
 from models import create_model
@@ -119,7 +119,7 @@ def run_layer_architecture_search(data, args):
         sample_size=args.sample_size if args.sample_size > 0 else None
     )
 
-    # Use your existing grid search function
+    # Use existing grid search function
     best_model, grid_result = run_grid_search(data, args, custom_model=model, custom_param_grid=param_grid)
 
     return best_model, grid_result
@@ -136,7 +136,7 @@ def main():
     np.random.seed(args.random_state)
     tf.random.set_seed(args.random_state)
 
-    # Prepare data using your existing function
+    # Prepare data using existing function
     data = prepare_data(args)
 
     # Create output directory and file paths
@@ -144,7 +144,7 @@ def main():
     output_dir = setup_output_directory(args.experiment_name, timestamp)
     file_paths = get_file_paths(args, output_dir, timestamp)
 
-    # Run the appropriate type of search
+    # Run appropriate search
     if args.layer_search:
         print("Running specialized layer architecture search...")
         best_model, grid_result = run_layer_architecture_search(data, args)
@@ -152,13 +152,12 @@ def main():
         print("Running standard grid search...")
         best_model, grid_result = run_grid_search(data, args)
     else:
-        # Standard model training (re-using your existing code)
         print("Running standard model training (no grid search)...")
-        # Import and run your standard training
+        # Import and run standard training
         from main import main as standard_main
         return standard_main()
 
-    # The rest follows your existing code flow for evaluating and saving results
+    # Follows existing code flow for evaluating and saving results
     # Extract best parameters
     try:
         best_params = best_model.get_params()
@@ -183,7 +182,7 @@ def main():
     args.dropout_rates = best_dropout_rates if len(best_dropout_rates) == len(best_hidden_layers) else [0.2] * len(best_hidden_layers)
     args.learning_rate = best_learning_rate
 
-    # Create and train final model (following your existing code flow)
+    # Create and train final model 
     model = create_model(
         args=args,
         input_dim=data['input_dim'],
@@ -232,7 +231,7 @@ def main():
     # Get experiment summary
     summary_text = get_experiment_summary(args, results)
 
-    # Save results and plots (using your existing functions)
+    # Save results and plots 
     save_model_summary(
         file_paths['config'],
         args,
