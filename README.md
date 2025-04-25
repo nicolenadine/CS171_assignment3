@@ -52,7 +52,7 @@ This project provides a flexible architecture for training neural networks with 
 
 ```bash
 # Clone repository
-git clone https://github.com/nicolenadine/CS171_assignment3.git
+git clone https://github.com/nicolenadine/NN_optimization_framework.git)](https://github.com/nicolenadine/NN_optimization_framework.git
 cd neural-network-framework
 
 # Create virtual environment (optional)
@@ -163,12 +163,10 @@ Contributions to this project are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
-
-[Choose appropriate license]
 
 ## Acknowledgments
 
 - TensorFlow and Keras teams
 - scikit-learn contributors
-- [Any additional acknowledgments]
+
+**Initially created as part of an Assignment in CS 171: Intro to Machine Learning at San Jose State University Spring 2025
